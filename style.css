@@ -1,13 +1,15 @@
+/* 基本設定 */
 * {
   margin: 0;
   padding: 0;
-  box-box: border-box;
+  box-sizing: border-box;
+  font-family: "Microsoft JhengHei", sans-serif;
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+  background-color: #f8f9fa;
   color: #333;
+  line-height: 1.6;
 }
 
 /* 導覽列樣式 */
@@ -15,12 +17,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
+  padding: 20px 8%;
   background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
 }
 
 .nav-links {
@@ -28,52 +32,127 @@ body {
   list-style: none;
 }
 
-.nav-links li a {
-  text-decoration: none;
-  margin-left: 20px;
-  color: #333;
-  font-weight: bold;
+.nav-links li {
+  margin: 0 20px;
 }
 
-/* Hero 區塊 */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a.active {
+  color: #4a6cf7;
+  border-bottom: 2px solid #4a6cf7;
+  padding-bottom: 5px;
+}
+
+.btn-outline {
+  border: 1px solid #333;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+/* 主視覺區樣式 */
 .hero {
-  height: 80vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 8%;
+  min-height: 80vh;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.badge {
+  background-color: #e6b94a;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 20px 0;
+  color: #222;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+/* 按鈕樣式 */
+.hero-btns {
+  margin-bottom: 40px;
+}
+
+.btn-primary {
+  background-color: #4a5af7;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.btn-secondary {
+  background-color: #e9ecef;
+  color: #333;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* 社群圖示 */
+.social-links a {
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background: #f4f4f4;
+  width: 40px;
+  height: 40px;
+  background: #e9ecef;
+  border-radius: 50%;
+  margin-right: 10px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.container {
-  padding: 4rem 10%;
-}
-.progress-bar {
-  background: #e0e0e0;
-  border-radius: 20px;
-  margin: 10px 0 20px;
-}
-.progress {
-  background: #2ecc71;
+.social-links a:hover {
+  background: #4a5af7;
   color: white;
-  padding: 5px;
-  text-align: right;
-  border-radius: 20px;
-  font-size: 12px;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+/* 右側大圖 */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
-.card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  transition: transform 0.3s;
+
+.image-circle {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-.card:hover {
-  transform: translateY(-5px);
+
+.image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
