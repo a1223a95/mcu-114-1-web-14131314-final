@@ -261,3 +261,59 @@ body {
     gap: 5px;
   }
 }
+
+/* 技術能力區塊樣式 */
+.skills {
+  padding: 100px 8%;
+  background-color: #fff; /* 背景改為白色，與上方區塊做區隔 */
+}
+
+.skills-container {
+  display: flex;
+  gap: 80px; /* 左右兩排的間距 */
+}
+
+.skills-column {
+  flex: 1;
+}
+
+.skill-item {
+  margin-bottom: 30px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* 進度條外框 */
+.progress-line {
+  height: 10px;
+  width: 100%;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 進度條填滿部分 */
+.progress-line span {
+  height: 100%;
+  background-color: #4a5af7; /* 延用主色調藍色 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  transition: width 1s ease-in-out; /* 增加載入動畫感 */
+}
+
+/* 手機版適應 */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    gap: 0;
+  }
+}
