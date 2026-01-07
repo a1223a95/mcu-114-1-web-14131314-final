@@ -156,3 +156,108 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/* 關於我區塊樣式 */
+.about {
+  padding: 100px 8%;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title p {
+  color: #888;
+  font-size: 14px;
+}
+
+.about-container {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* 左側卡片 */
+.intro-card {
+  flex: 1;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 輕微的陰影 */
+}
+
+.intro-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.intro-card p {
+  color: #555;
+  line-height: 1.8;
+}
+
+/* 右側教育程度 */
+.education {
+  flex: 1;
+}
+
+.education h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.edu-list {
+  list-style: none;
+}
+
+.edu-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #4a5af7; /* 藍色小點 */
+  border-radius: 50%;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.edu-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 500;
+}
+
+.edu-info .school {
+  color: #333;
+}
+
+.edu-info .date {
+  color: #333;
+  font-weight: bold;
+}
+
+/* 響應式微調：手機版時改為上下堆疊 */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .edu-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
