@@ -317,3 +317,60 @@ body {
     gap: 0;
   }
 }
+
+/* 作品集區塊樣式 */
+.portfolio {
+  padding: 100px 8%;
+  background-color: #f8f9fa; /* 與背景色呼應 */
+}
+
+/* 網格佈局：每行 3 個 */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 均分三列 */
+  gap: 30px; /* 卡片之間的間距 */
+}
+
+.portfolio-card {
+  background: #fff;
+  height: 200px; /* 固定高度，讓版面整齊 */
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #eee;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* 滑鼠移上去的微互動效果 */
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* 手機版適應：改為每行 1 個 */
+@media (max-width: 992px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* 平板版每行 2 個 */
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* 手機版每行 1 個 */
+  }
+}
