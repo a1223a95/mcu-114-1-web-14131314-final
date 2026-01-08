@@ -2,10 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-section {
-  scroll-margin-top: 80px;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -16,71 +12,44 @@ section {
 body {
   background-color: #f8f9fa;
   color: #333;
+  padding-top: 80px;
   line-height: 1.6;
 }
 
-/* 導覽列樣式 */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 8%;
-  background: #fff;
-
+  background: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 9999;
-
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
-body {
-  padding-top: 70px;
-  background-color: #f8f9fa;
-  color: #333;
-  line-height: 1.6;
-}
-
-.logo {
+.navbar .logo {
   font-size: 24px;
   font-weight: bold;
   color: #4a5af7;
-  letter-spacing: 1px;
 }
-
-.nav-links {
+.navbar .nav-links {
   display: flex;
   list-style: none;
 }
-
-.nav-links li {
+.navbar .nav-links li {
   margin: 0 20px;
 }
-
-.nav-links a {
+.navbar .nav-links li a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
 }
-
-.nav-links a.active {
-  color: #4a6cf7;
-  border-bottom: 2px solid #4a6cf7;
-  padding-bottom: 5px;
+.navbar .nav-links li a:hover {
+  color: #4a5af7;
 }
 
-.btn-outline {
-  border: 1px solid #333;
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-}
-
-/* 主視覺區樣式 */
 .hero {
   display: flex;
   align-items: center;
@@ -88,380 +57,122 @@ body {
   padding: 80px 8%;
   min-height: 80vh;
 }
-
-.hero-content {
+.hero .hero-content {
   flex: 1;
 }
-
-.badge {
+.hero .hero-content .badge {
   background-color: #e6b94a;
-  color: white;
+  color: #ffffff;
   padding: 5px 12px;
   border-radius: 5px;
-  font-size: 14px;
 }
-
-.hero h1 {
+.hero .hero-content h1 {
   font-size: 48px;
   margin: 20px 0;
-  color: #222;
 }
-
-.hero p {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 30px;
-  max-width: 500px;
-}
-
-/* 按鈕樣式 */
-.hero-btns {
-  margin-bottom: 40px;
-}
-
-.btn-primary {
-  background-color: #4a5af7;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-right: 15px;
-  display: inline-block;
-}
-
-.btn-secondary {
-  background-color: #e9ecef;
-  color: #333;
-  padding: 12px 30px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-/* 社群圖示 */
-.social-links a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background: #e9ecef;
-  border-radius: 50%;
-  margin-right: 10px;
-  color: #333;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.social-links a:hover {
-  background: #4a5af7;
-  color: white;
-}
-
-/* 右側大圖 */
-.hero-image {
+.hero .hero-image {
   flex: 1;
   display: flex;
   justify-content: flex-end;
 }
-
-.image-circle {
+.hero .hero-image .image-circle {
   width: 350px;
   height: 350px;
   border-radius: 50%;
   overflow: hidden;
-  border: 10px solid #fff;
+  border: 10px solid #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-
-.image-circle img {
+.hero .hero-image .image-circle img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
-/* 關於我區塊樣式 */
-.about {
+section {
   padding: 100px 8%;
-  background-color: #f8f9fa;
+  scroll-margin-top: 80px;
 }
-
-.section-title {
+section .section-title {
   text-align: center;
   margin-bottom: 60px;
 }
-
-.section-title h2 {
+section .section-title h2 {
   font-size: 32px;
-  position: relative;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-.section-title p {
-  color: #888;
-  font-size: 14px;
-}
-
-.about-container {
+.about .about-container {
   display: flex;
   gap: 50px;
-  align-items: flex-start;
 }
-
-/* 左側卡片 */
-.intro-card {
+.about .about-container .intro-card {
   flex: 1;
-  background: #fff;
+  background: #ffffff;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 輕微的陰影 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
-
-.intro-card h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 22px;
-}
-
-.intro-card p {
-  color: #555;
-  line-height: 1.8;
-}
-
-/* 右側教育程度 */
-.education {
+.about .about-container .education {
   flex: 1;
-}
-
-.education h3 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 22px;
-}
-
-.edu-list {
-  list-style: none;
-}
-
-.edu-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background-color: #4a5af7; /* 藍色小點 */
-  border-radius: 50%;
-  margin-right: 20px;
-  flex-shrink: 0;
-}
-
-.edu-info {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-weight: 500;
-}
-
-.edu-info .school {
-  color: #333;
-}
-
-.edu-info .date {
-  color: #333;
-  font-weight: bold;
-}
-
-/* 響應式微調：手機版時改為上下堆疊 */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-  }
-  .edu-info {
-    flex-direction: column;
-    gap: 5px;
-  }
-}
-
-/* 技術能力區塊樣式 */
-.skills {
-  padding: 100px 8%;
-  background-color: #fff; /* 背景改為白色，與上方區塊做區隔 */
 }
 
 .skills-container {
   display: flex;
-  gap: 80px; /* 左右兩排的間距 */
+  gap: 80px;
 }
-
-.skills-column {
+.skills-container .skills-column {
   flex: 1;
 }
-
-.skill-item {
-  margin-bottom: 30px;
+.skills-container .skills-column .skill-item {
+  margin-bottom: 25px;
 }
-
-.skill-info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  font-weight: 500;
-  color: #333;
-}
-
-/* 進度條外框 */
-.progress-line {
+.skills-container .skills-column .skill-item .progress-line {
   height: 10px;
-  width: 100%;
-  background-color: #e9ecef;
+  background: #e9ecef;
   border-radius: 10px;
   position: relative;
-  overflow: hidden;
 }
-
-/* 進度條填滿部分 */
-.progress-line span {
-  height: 100%;
-  background-color: #4a5af7; /* 延用主色調藍色 */
+.skills-container .skills-column .skill-item .progress-line span {
   position: absolute;
-  left: 0;
-  top: 0;
+  height: 100%;
+  background: #4a5af7;
   border-radius: 10px;
-  transition: width 1s ease-in-out; /* 增加載入動畫感 */
 }
 
-/* 手機版適應 */
-@media (max-width: 768px) {
-  .skills-container {
-    flex-direction: column;
-    gap: 0;
-  }
-}
-
-/* 作品集區塊樣式 */
-.portfolio {
-  padding: 100px 8%;
-  background-color: #f8f9fa; /* 與背景色呼應 */
-}
-
-/* 網格佈局：每行 3 個 */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 均分三列 */
-  gap: 30px; /* 卡片之間的間距 */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
-
-.portfolio-card {
-  background: #fff;
-  height: 200px; /* 固定高度，讓版面整齊 */
+.portfolio-grid .portfolio-card {
+  background: #ffffff;
+  height: 200px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  border: 1px solid #eee;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-/* 滑鼠移上去的微互動效果 */
-.portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.card-content h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.card-content p {
-  font-size: 14px;
-  color: #777;
-}
-
-/* 手機版適應：改為每行 1 個 */
-@media (max-width: 992px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr); /* 平板版每行 2 個 */
-  }
-}
-
-@media (max-width: 600px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr; /* 手機版每行 1 個 */
-  }
-}
-
-/* 頁尾區塊樣式 */
-.footer {
-  padding: 60px 8% 40px;
-  background-color: #fff;
-  text-align: center;
-  border-top: 1px solid #eee; /* 加上一條細微的分割線 */
-}
-
-.footer-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: #4a5af7;
-}
-
-/* 頁尾社群圖示 - 複用之前的樣式並微調 */
-.footer-social {
-  margin-bottom: 30px;
-}
-
-.footer-social a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 35px;
-  height: 35px;
-  background: #f1f3f5;
-  border-radius: 50%;
-  margin: 0 8px;
-  color: #555;
-  text-decoration: none;
-  font-size: 16px;
   transition: 0.3s;
 }
-
-.footer-social a:hover {
-  background: #4a5af7;
-  color: white;
-  transform: translateY(-3px);
+.portfolio-grid .portfolio-card:hover {
+  transform: translateY(-5px);
 }
 
-/* 版權文字 */
-.copyright {
-  color: #888;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-/* 手機版適應 */
-@media (max-width: 600px) {
-  .footer-links {
+@media (max-width: 992px) {
+  .hero,
+  .about-container,
+  .skills-container {
     flex-direction: column;
-    gap: 15px;
+    text-align: center;
   }
-}
+  .hero-image {
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=style.css.map */

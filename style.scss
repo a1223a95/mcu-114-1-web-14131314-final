@@ -1,0 +1,200 @@
+// 1. 變數設定
+$primary-color: #4a5af7;
+$secondary-color: #e6b94a;
+$bg-light: #f8f9fa;
+$text-dark: #333;
+$white: #ffffff;
+
+// 2. 全域重置
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft JhengHei", sans-serif;
+}
+
+body {
+  background-color: $bg-light;
+  color: $text-dark;
+  padding-top: 80px; // 預留給固定導覽列的空間
+  line-height: 1.6;
+}
+
+// 3. 導覽列 (位置固定)
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    li {
+      margin: 0 20px;
+      a {
+        text-decoration: none;
+        color: $text-dark;
+        font-weight: 500;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+// 4. 主視覺區 (Hero Section) - 修正照片尺寸
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 8%;
+  min-height: 80vh;
+
+  .hero-content {
+    flex: 1;
+    .badge {
+      background-color: $secondary-color;
+      color: $white;
+      padding: 5px 12px;
+      border-radius: 5px;
+    }
+    h1 {
+      font-size: 48px;
+      margin: 20px 0;
+    }
+  }
+
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    // 這裡最重要：限制圓框大小
+    .image-circle {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      overflow: hidden; // 確保照片超出圓圈的部分被切掉
+      border: 10px solid $white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+      img {
+        width: 100%; // 寬度撐滿圓框
+        height: 100%; // 高度撐滿圓框
+        object-fit: cover; // 關鍵：照片自動裁切填滿，不變形
+        object-position: center;
+      }
+    }
+  }
+}
+
+// 5. 其他區塊通用樣式 (關於我、技術、作品集)
+section {
+  padding: 100px 8%;
+  scroll-margin-top: 80px;
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.about {
+  .about-container {
+    display: flex;
+    gap: 50px;
+    .intro-card {
+      flex: 1;
+      background: $white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    .education {
+      flex: 1;
+    }
+  }
+}
+
+// 技術進度條
+.skills-container {
+  display: flex;
+  gap: 80px;
+  .skills-column {
+    flex: 1;
+    .skill-item {
+      margin-bottom: 25px;
+      .progress-line {
+        height: 10px;
+        background: #e9ecef;
+        border-radius: 10px;
+        position: relative;
+        span {
+          position: absolute;
+          height: 100%;
+          background: $primary-color;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+// 作品集網格
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  .portfolio-card {
+    background: $white;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+// 響應式：手機版全部改為單欄
+@media (max-width: 992px) {
+  .hero,
+  .about-container,
+  .skills-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image {
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
